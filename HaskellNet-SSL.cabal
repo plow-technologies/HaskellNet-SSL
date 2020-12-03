@@ -1,6 +1,6 @@
 name:                HaskellNet-SSL
 synopsis:            Helpers to connect to SSL/TLS mail servers with HaskellNet
-version:             0.3.4.1
+version:             0.4.0.0
 description:         This package ties together the HaskellNet and connection
                      packages to make it easy to open IMAP and SMTP connections
                      over SSL.
@@ -31,19 +31,11 @@ library
                        Network.HaskellNet.SMTP.SSL
                        Network.HaskellNet.SSL
   other-modules:       Network.HaskellNet.SSL.Internal
-  if flag(NoUpperBounds)
-    build-depends:     base >= 4,
-                       HaskellNet >= 0.3,
-                       tls >= 1.2,
-                       connection >= 0.2.7,
-                       network >= 2.4,
-                       bytestring,
-                       data-default
-  else
-    build-depends:     base >= 4 && < 5,
-                       HaskellNet >= 0.3 && < 0.6,
-                       tls >= 1.2 && < 1.5,
-                       connection >= 0.2.7 && < 0.3,
-                       network >= 2.4 && < 2.9,
-                       bytestring,
-                       data-default
+  build-depends:     base >= 4,
+                     HaskellNet >= 0.3,
+                     tls >= 1.2,
+                     connection >= 0.2.7,
+                     network,
+                     network-bsd,
+                     bytestring,
+                     data-default

@@ -5,7 +5,7 @@ module Network.HaskellNet.SSL.Internal
 
 import Network.Connection
 import Network.HaskellNet.SSL
-import Network.HaskellNet.BSStream
+import Network.HaskellNet.BSStream hiding (connectionToStream)
 
 import qualified Data.ByteString.Char8 as B
 import Data.Default
